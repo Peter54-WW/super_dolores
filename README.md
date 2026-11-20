@@ -45,7 +45,7 @@ test/  dominio_test · servicios_test · retencion_test · vms_test
 
 Las pruebas de `test/` se escribieron **antes** que el código. Al correr `flutter test` con `lib/` todavía vacía, nada compila:
 
-![Rojo: las pruebas no compilan](capturas/01_rojo_no_compila.png)
+![Rojo: las pruebas no compilan](capturas/01_rojo_no_compilas.png)
 
 ### 2. ❌ Error real atrapado por una prueba
 
@@ -60,7 +60,7 @@ expect(l.puntos('u1'), 5 + 8);       // ❌ el manual olvidó su propia regla
 Pero la regla 2 del mismo manual da **+50 por usar 2 servicios distintos en la semana** (comercio y transporte),
 así que el motor —que está bien— dio 63:
 
-![Error atrapado por la prueba](capturas/02_error.png)
+![Error atrapado por la prueba](captura/02_error.png)
 
 **Corrección (en la prueba, no en el código):**
 
@@ -74,15 +74,15 @@ Buen recordatorio de TDD: cuando una prueba falla hay que preguntarse **quién e
 
 Con las pruebas en verde se ordenó el código y `flutter analyze` quedó sin avisos:
 
-![Analyze limpio](capturas/04_analyze_limpio.png)
+![Analyze limpio](captura/04_analyze_limpio.png)
 
 ### 4. 🟢 VERDE — las 104 pruebas pasan
 
-![Verde: todas las pruebas pasan](capturas/05_verde_pruebas.png)
+![Verde: todas las pruebas pasan](captura/05_verde_pruebas.png)
 
 ### 5. 📦 Compilación del APK
 
-![Compilación del APK](capturas/06_build_apk.png)
+![Compilación del APK](captura/06_build_apk.png)
 
 ---
 
