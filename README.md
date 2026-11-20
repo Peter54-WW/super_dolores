@@ -28,7 +28,7 @@ El APK es para teléfonos **arm64** (prácticamente todos los Android de los úl
 
 ## 🏗️ Estructura
 
-```
+```text
 lib/
 ├── dominio/        dinero · excepciones · eventos (bus) · monedero · mensajeria · comercio · transporte
 │                   mini_app · contexto (permisos) · plataforma · lealtad · analitica · notificaciones · sugerencias
@@ -43,9 +43,7 @@ test/  dominio_test · servicios_test · retencion_test · vms_test
 
 ### 1. 🔴 ROJO — las pruebas se escriben primero y fallan
 
-Las pruebas de `test/` se escribieron **antes** que el código. Al correr `flutter test` con `lib/` todavía vacía, nada compila:
-
-![Rojo: las pruebas no compilan](capturas/01_rojo_no_compilas.png)
+Las pruebas de `test/` se escribieron **antes** que el código. Al correr `flutter test` con `lib/` todavía vacía, nada compila.
 
 ### 2. ❌ Error real atrapado por una prueba
 
@@ -58,9 +56,7 @@ expect(l.puntos('u1'), 5 + 8);       // ❌ el manual olvidó su propia regla
 ```
 
 Pero la regla 2 del mismo manual da **+50 por usar 2 servicios distintos en la semana** (comercio y transporte),
-así que el motor —que está bien— dio 63:
-
-![Error atrapado por la prueba](captura/02_error.png)
+así que el motor —que está bien— dio 63.
 
 **Corrección (en la prueba, no en el código):**
 
@@ -72,17 +68,15 @@ Buen recordatorio de TDD: cuando una prueba falla hay que preguntarse **quién e
 
 ### 3. 🔵 REFACTOR — limpiar sin romper nada
 
-Con las pruebas en verde se ordenó el código y `flutter analyze` quedó sin avisos:
-
-![Analyze limpio](captura/04_analyze_limpio.png)
+Con las pruebas en verde se ordenó el código y `flutter analyze` quedó sin avisos.
 
 ### 4. 🟢 VERDE — las 104 pruebas pasan
 
-![Verde: todas las pruebas pasan](captura/05_verde_pruebas.png)
+Las 104 pruebas del proyecto pasan tras completar el ciclo de desarrollo y correcciones.
 
 ### 5. 📦 Compilación del APK
 
-![Compilación del APK](captura/06_build_apk.png)
+El APK de liberación se compila en modo `release` para `android-arm64`.
 
 ---
 
@@ -146,4 +140,3 @@ flutter test
 ```bash
 flutter run
 ```
-
